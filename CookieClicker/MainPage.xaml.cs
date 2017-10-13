@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -22,9 +23,17 @@ namespace CookieClicker
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        int score = 0; 
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void CookieImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            score++;
+            ScoreLabel.Text = score.ToString();
         }
     }
 }
